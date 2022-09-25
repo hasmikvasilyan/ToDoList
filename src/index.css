@@ -1,13 +1,149 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html::-webkit-scrollbar {
+  display: none;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f2f4f8;
+  padding: 30px 0;
+}
+a {
+  text-decoration: none;
+  display: block;
+  color: #000000;
+}
+ul{
+  list-style-type: none;
+}
+input,button {
+  outline: none;
+  border: none;
+}
+input[type="checkbox"]{  
+  -webkit-appearance: none;
+  appearance: none;  
+  cursor: pointer;
+}
+button{
+  cursor: pointer;
+}
+.roundedFrame{
+  padding: 0.9rem 1rem;
+  border-radius: 15px;
+  border: 1px solid #C4CAD5;
+  background-color: #FAFAFC;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.container{
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: min(100%, calc(344px + 3rem + 1.6rem));
+}
+.title{
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.17;
+  text-align: center;
+}
+.text{
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+}
+.todoList{
+  max-height: 350px;
+  padding: 0 0.8rem; 
+  overflow-y: auto;
+}
+.toDoItem{
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; 
+  
+}
+.checkBoxWrapper{
+  display: flex;
+  align-items: center;
+}
+.checkBoxWrapper input{
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.75rem;
+  border: 1px solid #C4CAD5;
+  border-radius: 4px;
+}
+.checkBoxWrapper input:checked::before {
+  content: "\2714";  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #FC5F5F;
+  font-size: 1.2rem;
+  
+}
+.deleteIcon{  
+  width: 14px;
+  height: 14px;
+  margin-left: auto;
+  cursor: pointer;
+}
+.deleteIcon:hover path{
+  stroke:#FC5F5F;  
+}
+.divider{
+  margin: 1.88rem 0;
+  border: 1px solid #EAEAEA;
+}
+.toDoInput{
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.submitBtn{
+  width: 100%;
+  color: #FC5F5F;
+  transition: all .25s ease;
+}
+.submitBtn.disabled{
+  background-color: #C4CAD5;
+  color: #83868c;
+  cursor: not-allowed;
+}
+.submitBtn:hover{
+  border: 1px solid #FC5F5F;
+  color: #fff;
+  background-color: #FC5F5F;
+  transition: all .25s ease;
+}
+.submitBtn.disabled:hover{
+  border: 1px solid #C4CAD5;
+  color: #83868c;
+  background-color: #C4CAD5;
+}
+.todoList::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+  left:-20px
+}
+.todoList::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 5px;
+}
+.todoList::-webkit-scrollbar-thumb {
+  background: #C4CAD5;
+  border-radius: 5px;
+}
+.todoList::-webkit-scrollbar-thumb:hover {
+  background: #83868c;
+  /* border-radius: 5px; */
 }
